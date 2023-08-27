@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
             />
             <View style={styles.buttonSpace} />
             <Button
-                title="ColorList"
+                title="Color List"
                 onPress={() => navigation.navigate('ColorList')}
             />
         </View>
