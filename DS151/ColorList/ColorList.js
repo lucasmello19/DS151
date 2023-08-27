@@ -24,7 +24,7 @@ function ColorList() {
                             backgroundColor: item,
                             width: 100,
                             height: 100,
-                            margin: '10px'
+                            margin: '10px',
                         }}
                     ></View>
                 )}

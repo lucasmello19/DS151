@@ -6,12 +6,12 @@ export default function Home({ navigation }) {
         <View style={styles.container}>
             <Button
                 title="Sistema de Notas"
-                onPress={() => navigation.navigate('SistemaDeNotas')}
+                onPress={() => navigation.navigate('MediaCalculator')}
             />
             <View style={styles.buttonSpace} />
             <Button
                 title="Sistema Contador"
-                onPress={() => navigation.navigate('SistemaContador')}
+                onPress={() => navigation.navigate('Counter')}
             />
             <View style={styles.buttonSpace} />
             <Button

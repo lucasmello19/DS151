@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     input: {
-        width: '120%',
+        width: 'auto',
         height: 40,
         borderWidth: 1,
         borderColor: '#ccc',
