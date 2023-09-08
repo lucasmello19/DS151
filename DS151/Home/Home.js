@@ -18,6 +18,11 @@ export default function Home({ navigation }) {
                 title="Color List"
                 onPress={() => navigation.navigate('ColorList')}
             />
+              <View style={styles.buttonSpace} />
+            <Button
+                title="Galeria"
+                onPress={() => navigation.navigate('Galeria')}
+            />
         </View>
     );
 }
