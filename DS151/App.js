@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home/Home';
-import ColorList from './ColorList/ColorList';
+import ColorList from './ColorListComponent/ColorList';
 import Counter from './CounterComponent/Counter'
 import MediaCalculator from './MediaCalculatorComponent/MediaCalculator'
 import Galeria from './GaleriaComponent/Galeria';
