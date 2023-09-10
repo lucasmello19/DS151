@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import { Searchbar } from 'react-native-paper'; // Importe o Searchbar do react-native-paper
+import { Searchbar } from 'react-native-paper';
 
 const CustomSearchBar = ({ onSearch }) => {
     const [searchText, setSearchText] = useState('');
