@@ -2,10 +2,10 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Components/Home/Home';
-import Counter from './Components/CounterComponent/Counter'
-import ColorList from './Components/ColorListComponent/ColorList';
-import MediaCalculator from './Components/MediaCalculatorComponent/MediaCalculator'
-import Galeria from './GaleriaComponent/Galeria';
+import Counter from './Components/Counter/Counter'
+import ColorList from './Components/ColorList/ColorList';
+import MediaCalculator from './Components/MediaCalculator/MediaCalculator'
+import Galeria from './Components/Galeria/Galeria';
 
 const Stack = createStackNavigator();
 

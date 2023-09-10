@@ -1,20 +1,20 @@
 import React from 'react';
 import { View, FlatList, Image, StyleSheet } from 'react-native';
-import cat1 from './../assets/cat1.jpg';
-import cat2 from './../assets/cat2.jpg';
-import cat3 from './../assets/cat3.jpg';
-import cat4 from './../assets/cat4.jpg';
-import cat5 from './../assets/cat5.png';
-import cat6 from './../assets/cat6.jpg';
-import cat7 from './../assets/cat7.jpg';
-import cat8 from './../assets/cat8.jpg';
-import cat9 from './../assets/cat9.jpg';
-import cat10 from './../assets/cat10.jpg';
-import cat11 from './../assets/cat11.jpg';
-import cat12 from './../assets/cat12.jpg';
-import cat13 from './../assets/cat13.jpg';
-import cat14 from './../assets/cat14.jpg';
-import cat15 from './../assets/cat15.jpg';
+import cat1 from './../../Assets/Images/cat1.jpg'
+import cat2 from './../../Assets/Images/cat2.jpg';
+import cat3 from './../../Assets/Images/cat3.jpg';
+import cat4 from './../../Assets/Images/cat4.jpg';
+import cat5 from './../../Assets/Images/cat5.png';
+import cat6 from './../../Assets/Images/cat6.jpg';
+import cat7 from './../../Assets/Images/cat7.jpg';
+import cat8 from './../../Assets/Images/cat8.jpg';
+import cat9 from './../../Assets/Images/cat9.jpg';
+import cat10 from './../../Assets/Images/cat10.jpg';
+import cat11 from './../../Assets/Images/cat11.jpg';
+import cat12 from './../../Assets/Images/cat12.jpg';
+import cat13 from './../../Assets/Images/cat13.jpg';
+import cat14 from './../../Assets/Images/cat14.jpg';
+import cat15 from './../../Assets/Images/cat15.jpg';
 
 const imagens = [
     { id: '12', url: cat12 },

@@ -1,9 +1,16 @@
 import React from 'react';
 import { StyleSheet, View, Button } from 'react-native';
+import SearchBar from '../SearchBar/SearchBar';// Importe o componente SearchBar
 
 export default function Home({ navigation }) {
+    const handleSearch = (searchText) => {
+        // Implemente a lógica de busca aqui com base no searchText
+        // Exemplo: navigation.navigate('SearchResults', { searchText });
+    };
+
     return (
         <View style={styles.container}>
+            <SearchBar onSearch={handleSearch} />
             <Button
                 title="Sistema de Notas"
                 onPress={() => navigation.navigate('MediaCalculator')}
@@ -18,7 +25,7 @@ export default function Home({ navigation }) {
                 title="Color List"
                 onPress={() => navigation.navigate('ColorList')}
             />
-              <View style={styles.buttonSpace} />
+            <View style={styles.buttonSpace} />
             <Button
                 title="Galeria"
                 onPress={() => navigation.navigate('Galeria')}
