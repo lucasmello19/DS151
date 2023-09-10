@@ -38,7 +38,7 @@ function getRandomSize() {
     const minWidth = 100;
     const maxWidth = 500;
     const minHeight = 100;
-    const maxHeight = 500;
+    const maxHeight = 250;
 
     const randomWidth = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth;
     const randomHeight = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight;
