@@ -5,8 +5,8 @@ import CustomSearchBar from "../SearchBar/SearchBar";
 import { StyleSheet, View } from 'react-native';
 import tmdb from "../../src/api/tmdb";
 
-async function searchTmdb(query){
-    const response = await tmdb.get('/search/movie',{
+async function searchTmdb(query) {
+    const response = await tmdb.get('/search/movie', {
         params: {
             query,
             include_adult: false,
@@ -65,10 +65,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default () => {
-    return (
-        <NativeBaseProvider>
-            <Home />
-        </NativeBaseProvider>
-    );
-};
+export default Home
