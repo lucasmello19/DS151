@@ -1,9 +1,0 @@
-{
-  "expoServerPort": 19000,
-  "packagerPort": 19000,
-  "expoServerNgrokUrl": "https://xarrsum.anonymous.ds151.exp.direct",
-  "packagerNgrokUrl": "https://xarrsum.anonymous.ds151.exp.direct",
-  "ngrokPid": 11516,
-  "packagerPid": null,
-  "webpackServerPort": 19006
-}
