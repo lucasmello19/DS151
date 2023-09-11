@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, HamburgerIcon, Box, Pressable, NativeBaseProvider } from "native-base";
+import { Menu, HamburgerIcon, Box, Pressable } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import CustomSearchBar from "../SearchBar/SearchBar";
 import { StyleSheet, View } from 'react-native';
