@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './MediaCalculatorStyles';
-import { View, TextInput, Button, Text } from 'react-native';
+import { View, TextInput, Button } from 'react-native';
+import { Text } from 'react-native-paper';
 
 const MediaCalculator = () => {
     const [input1, setInput1] = useState('');
