@@ -1,14 +1,19 @@
 import { Menu, HamburgerIcon, Box, Pressable } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import CustomSearchBar from "../SearchBar/SearchBar";
-import { StyleSheet, View, FlatList, Text } from 'react-native';
+import { StyleSheet, View, FlatList, Text, ActivityIndicator } from 'react-native';
 import tmdb from "../../src/api/tmdb";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Home() {
     const [titles, setTitles] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [feedbackSearch, setFeedback] = useState('');
+
 
     async function searchTitle(query) {
+        setLoading(true);
+        setTitles([])
         const titlesResult = [];
         try {
             const response = await tmdb.get('/search/movie', {
@@ -23,15 +28,17 @@ function Home() {
                 titlesResult.push(result.title);
             });
             setTitles(titlesResult)
+            if (titlesResult.length === 0) {
+                setFeedback('nenhuma busca foi encontrada')
+            } else {
+                setFeedback('')
+            }
+            setLoading(false);
         } catch (error) {
             console.error('Erro:', error);
+            setLoading(false);
         }
     };
-
-    useEffect(() => {
-        // Este efeito será acionado após a atualização de 'titles'
-        console.log('Estado atualizado:', titles);
-    }, [titles]);
 
     const navigation = useNavigation();
 
@@ -69,6 +76,13 @@ function Home() {
                 <CustomSearchBar onSearch={(searchText) => {
                     searchTitle(searchText);
                 }} />
+                <View style={styles.activityIndicator}>
+                    {loading ? (
+                        <ActivityIndicator size="large" color="#0000ff" />
+                    ) : (
+                        <Text>{feedbackSearch}</Text>
+                    )}
+                </View>
                 <FlatList
                     data={titles}
                     renderItem={({ item }) => (
@@ -83,9 +97,19 @@ function Home() {
 }
 
 const styles = StyleSheet.create({
-    searchBarContainer: {
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    activityIndicator: {
+        alignItems: 'center',
+        paddingTop:50,
+      },
+      searchBarContainer: {
         padding: 20,
     },
+    
 });
 
 
