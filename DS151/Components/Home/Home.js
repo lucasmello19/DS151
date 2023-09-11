@@ -3,11 +3,22 @@ import { Menu, HamburgerIcon, Box, Pressable, NativeBaseProvider } from "native-
 import { useNavigation } from "@react-navigation/native";
 import CustomSearchBar from "../SearchBar/SearchBar";
 import { StyleSheet, View } from 'react-native';
+import tmdb from "../../src/api/tmdb";
 
+async function searchTmdb(query){
+    const response = await tmdb.get('/search/movie',{
+        params: {
+            query,
+            include_adult: false,
+        }
+    })
+    console.log(response);
+}
 
 function Home() {
-    const navigation = useNavigation();
+    searchTmdb('guerra');
 
+    const navigation = useNavigation();
     return (
         <Box w="100%" p={4}>
             <Box flexDirection="column" alignItems="flex-start">
