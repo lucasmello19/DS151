@@ -5,19 +5,29 @@ import CustomSearchBar from "../SearchBar/SearchBar";
 import { StyleSheet, View } from 'react-native';
 import tmdb from "../../src/api/tmdb";
 
-async function searchTmdb(query) {
-    const response = await tmdb.get('/search/movie', {
-        params: {
-            query,
-            include_adult: false,
-        }
-    })
-    console.log(response);
-}
-
 function Home() {
-    searchTmdb('guerra');
-
+    async function searchTitle(query) {
+        try {
+            const response = await tmdb.get('/search/movie', {
+                params: {
+                    query,
+                    include_adult: false,
+                }
+            })
+            const results = response.data.results;
+            const titlesArray = [];
+    
+            results.forEach(result => {
+                titlesArray.push(result.title);
+            });
+    
+            console.log(titlesArray);
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    };
+    
+    
     const navigation = useNavigation();
     return (
         <Box w="100%" p={4}>
@@ -50,8 +60,7 @@ function Home() {
 
             <View style={styles.searchBarContainer}>
                 <CustomSearchBar onSearch={(searchText) => {
-                    // Lógica de pesquisa aqui com base no searchText
-                    console.log("Pesquisar por:", searchText);
+                    searchTitle(searchText);
                 }} />
             </View>
         </Box>
