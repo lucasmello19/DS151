@@ -5,5 +5,5 @@
   "packagerNgrokUrl": "https://xarrsum.anonymous.ds151.exp.direct",
   "ngrokPid": 12028,
   "packagerPid": null,
-  "webpackServerPort": 19006
+  "webpackServerPort": null
 }
