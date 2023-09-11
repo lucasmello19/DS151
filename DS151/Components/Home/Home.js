@@ -1,54 +1,63 @@
-import React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
-import SearchBar from '../SearchBar/SearchBar';
+import React from "react";
+import { Menu, HamburgerIcon, Box, Pressable, NativeBaseProvider } from "native-base";
+import { useNavigation } from "@react-navigation/native";
+import CustomSearchBar from "../SearchBar/SearchBar";
+import { StyleSheet, View } from 'react-native';
 
-export default function Home({ navigation }) {
-    const handleSearch = (searchText) => {
-        // Implemente a lógica de busca aqui com base no searchText
 
-    };
+function Home() {
+    const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
+        <Box w="100%" p={4}>
+            <Box flexDirection="column" alignItems="flex-start">
+                <Menu w="190" trigger={triggerProps => {
+                    return (
+                        <Pressable {...triggerProps}>
+                            <HamburgerIcon />
+                        </Pressable>
+                    );
+                }}>
+                    <Menu.Item
+                        onPress={() => navigation.navigate('MediaCalculator')}
+                        children="Sistema de Notas"
+                    />
+                    <Menu.Item
+                        onPress={() => navigation.navigate('Counter')}
+                        children="Sistema Contador"
+                    />
+                    <Menu.Item
+                        onPress={() => navigation.navigate('ColorList')}
+                        children="Color List"
+                    />
+                    <Menu.Item
+                        onPress={() => navigation.navigate('Galeria')}
+                        children="Galeria"
+                    />
+                </Menu>
+            </Box>
+
             <View style={styles.searchBarContainer}>
-                <SearchBar onSearch={handleSearch} />
+                <CustomSearchBar onSearch={(searchText) => {
+                    // Lógica de pesquisa aqui com base no searchText
+                    console.log("Pesquisar por:", searchText);
+                }} />
             </View>
-            <View style={styles.buttonContainer}>
-                <Button
-                    title="Sistema de Notas"
-                    onPress={() => navigation.navigate('MediaCalculator')}
-                />
-                <View style={styles.buttonSpace} />
-                <Button
-                    title="Sistema Contador"
-                    onPress={() => navigation.navigate('Counter')}
-                />
-                <View style={styles.buttonSpace} />
-                <Button
-                    title="Color List"
-                    onPress={() => navigation.navigate('ColorList')}
-                />
-                <View style={styles.buttonSpace} />
-                <Button title="Galeria" onPress={() => navigation.navigate('Galeria')} />
-            </View>
-        </View>
+        </Box>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-    },
     searchBarContainer: {
         padding: 20,
     },
-    buttonContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    buttonSpace: {
-        marginVertical: 10,
-    },
 });
+
+
+export default () => {
+    return (
+        <NativeBaseProvider>
+            <Home />
+        </NativeBaseProvider>
+    );
+};
