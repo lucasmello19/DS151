@@ -1,9 +1,10 @@
 import { Menu, HamburgerIcon, Box, Pressable } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import CustomSearchBar from "../SearchBar/SearchBar";
-import { StyleSheet, View, FlatList, Text, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, FlatList, ActivityIndicator } from 'react-native';
 import tmdb from "../../src/api/tmdb";
 import React, { useState } from 'react';
+import { Text } from 'react-native-paper';
 
 function Home() {
     const [titles, setTitles] = useState([]);
@@ -104,12 +105,12 @@ const styles = StyleSheet.create({
     },
     activityIndicator: {
         alignItems: 'center',
-        paddingTop:50,
-      },
-      searchBarContainer: {
+        paddingTop: 50,
+    },
+    searchBarContainer: {
         padding: 20,
     },
-    
+
 });
 
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './CounterStyles';
-import { View, Button, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { Text } from 'react-native-paper';
 
 const Counter = () => {
     const [count, setCount] = useState(0);

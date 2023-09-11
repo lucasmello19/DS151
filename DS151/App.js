@@ -21,7 +21,8 @@ export default function App() {
           <Stack.Screen name="ColorList" component={ColorList} />
           <Stack.Screen name="Galeria" component={Galeria} />
         </Stack.Navigator>
-      </NavigationContainer>        </NativeBaseProvider>
+      </NavigationContainer>
+    </NativeBaseProvider>
 
   );
 }
